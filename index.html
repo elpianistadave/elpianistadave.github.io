@@ -5,48 +5,45 @@
     
     <title>Dave's google</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="google.png" type="image/png"> 
 
 </head>
 <body>
-  <header>
-    <nav> 
-        <ul class="nav-right-section">
-            <li>
-                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">Gmail</a>
-            </li>
-            <li>
-                <a href="https://www.google.com/imghp?hl=es&tab=ri&authuser=0&ogbl">Imágenes</a>
-            </li>
-          
-            <li>
-                <form action="https://accounts.google.com/SignOutOptions?hl=es&continue=https://www.google.com%3Fhl%3Des&ec=GBRA8wE" method="post">
-
-                <input type="submit" value="Iniciar sesión">
-            </form>
-            </li>
-    </ul>
-    </nav>
-  </header>
 
   <main>
+         <h1> Mi puntuación en programación </h1>
+    
+         <input type="number" id="puntuacion" placeholder="escribe tu puntuacion"/>
+         <button onclick="mostrarcalificacion()"> Obtener calificacion</button>
+         <p id="resultado"></p>
+        
+    <script>
+        function Obtenercalificacion(puntuacion) {
+            if (puntuacion >= 0 && puntuacion <10){
+                return "F";} 
+            else if (puntuacion >= 10 && puntuacion <50) {
+                return "D";}
+            else if (puntuacion >=50 && puntuacion <70) {
+                return "C";}
+            else if (puntuacion >=70 && puntuacion <90) {
+                return "B";}
+            else if (puntuacion >=90 && puntuacion <=100){
+                return "A";}
+            else if (puntuacion <0 || puntuacion >100) {return "Intentelo de nuevo"}
+            else { 
+                return "Calificacion no valida";}
+            
 
-        <img src="Imágenes/Google_2015_logo.svg">
-   
-    <section class="main-input">
-        <div class="main-input-container">
-           
-            <input type="text">
-        </div>
-    </section>
-    <section class="main-buttons">
-        <div>
-            <button> Buscar con google </button>
-        </div>
 
-    </section>
+        }
+        function mostrarcalificacion(){
+        let puntuacion = document.getElementById("puntuacion").value;
+        let resultado = Obtenercalificacion(Number(puntuacion));
+        document.getElementById("resultado").textContent = "Tu calificacion es: " + resultado;
+               }
+</script>
+
   </main>
 </body>
-<footer>
-   
-</footer>
+
 </html>
