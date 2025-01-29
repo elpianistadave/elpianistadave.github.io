@@ -41,12 +41,13 @@ button :hover {
 
 }
 p {
-    font-size: 18px;
+    font-size: 25px;
     margin: 10px 0;
 }
 
 #resultado {
     font-weight: bold;
-    color: #555;
+    color: black;
     margin-top: 20px;
+    padding-right: 200px;
 }
