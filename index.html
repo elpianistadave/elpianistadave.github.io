@@ -1,49 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    
-    <title>Mi puntuacion</title>
-    <link rel="stylesheet" href="style.css">
-    <link img src="Imágenes/IMG_20230811_153008.jpg">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bola Rebotando</title>
+    <style>
+        canvas {
+            border: 2px solid black;
+            display: block;
+            margin: auto;
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
-
-  <main>
-    
-         <h1> <br>Mi puntuación </br>
-            en programación </h1>
-    
-         <input type="number" id="puntuacion" placeholder="escribe tu puntuacion"/>
-         <button onclick="mostrarcalificacion()"> Obtener calificacion</button>
-         <p id="resultado"></p>
-        
-    <script>
-        function Obtenercalificacion(puntuacion) {
-            if (puntuacion >= 0 && puntuacion <10){
-                return "F";} 
-            else if (puntuacion >= 10 && puntuacion <50) {
-                return "D";}
-            else if (puntuacion >=50 && puntuacion <70) {
-                return "C";}
-            else if (puntuacion >=70 && puntuacion <90) {
-                return "B";}
-            else if (puntuacion >=90 && puntuacion <=100){
-                return "A";}
-            else if (puntuacion <0 || puntuacion >100) {return "Intentelo de nuevo"}
-            else { 
-                return "Calificacion no valida";}
-            
-        }
-        function mostrarcalificacion(){
-        let puntuacion = document.getElementById("puntuacion").value;
-        let resultado = Obtenercalificacion(Number(puntuacion));
-        document.getElementById("resultado").textContent = "Tu calificacion es: " + resultado;
-        }
-</script>
-
-  </main>
+    <canvas id="miCanvas" width="250" height="250"></canvas>
+    <script src="script.js"></script>
 </body>
-
 </html>
